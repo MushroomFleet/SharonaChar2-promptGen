@@ -1,0 +1,42 @@
+we will create a prompt generator aligned for use with a pre-trained lora, by giving access to the full caption list and prompt template instruction.
+
+caption list:
+@sharona-charv2.txt - the current caption list used to train the image Lora model
+
+example prompt:
+illustration of cavegirl, from a fantasy barbarian time period. The woman is dressed in a unique outfit consisting of an orange fur-like top, black loincloth, and matching orange fur leggings with black stripes. The woman's attire and pose suggest a blend of modern and prehistoric elements, creating an intriguing visual contrast. Watercolor style graphic novel illustration, detailed ink linework
+
+here is a breakdown of the prompt format that is being used today.
+
+prompt template:
+[prompt type]
+illustration of cavegirl, from a fantasy barbarian time period.
+[subject description]
+The woman is dressed in a unique outfit consisting of an orange fur-like top, black loincloth, and matching orange fur leggings with black stripes. The woman's attire and pose suggest prehistoric elements.
+[prompt style]
+Watercolor style graphic novel illustration, detailed ink linework
+
+so the prompt must follow the format:
+[prompt type]. [subject description]. [prompt style].
+as a single paragraph format line of text.
+
+example sample:
+depiction of hunter-style cave woman character, sh4r0na woman with short white hair, vibrant orange fur skin blouse with black accents and exposed torso, including matching fur skin wrapped oversized boots and gloves. she is standing in a snowy environment with a blue sky and scattered debris around. The background features a mix of snow-covered ground and partially destroyed structures, giving the scene an apocalyptic or post-apocalyptic feel.
+
+Caption template:
+[caption type]
+depiction of hunter-style cave woman character, 
+[character description]
+sh4r0na woman with short white hair, vibrant orange fur skin blouse with black accents and exposed torso, including matching fur skin wrapped oversized boots and gloves. 
+[caption description]
+she is standing in a snowy environment with a blue sky and scattered debris around. The background features a mix of snow-covered ground and partially destroyed structures, giving the scene an apocalyptic or post-apocalyptic feel.
+
+so the caption must follow the format:
+[caption type], [character description], [caption description].
+as a single paragraph format line of text.
+
+
+we need to generate new prompts which use a blended template.
+[prompt type], [character description], [caption description], [prompt style]
+
+output new prompts as complete paragraphs on a single line for each new prompt to a textfile using a filename appended with a timestamp, leaving no empty lines.
